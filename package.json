@@ -1,0 +1,21 @@
+{
+  "name": "work-tracker-crm",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Work Tracker CRM - MERN app for teams tracking client work: projects, Kanban tasks, time tracking, invoices, real-time updates and Claude-powered AI.",
+  "workspaces": [
+    "server",
+    "web"
+  ],
+  "scripts": {
+    "dev": "concurrently -n api,web -c cyan,magenta \"npm run dev -w server\" \"npm run dev -w web\"",
+    "build": "npm run build -w server && npm run build -w web",
+    "start": "npm run start -w server",
+    "seed": "npm run seed -w server",
+    "test": "npm run test -w server",
+    "typecheck": "npm run typecheck -w server && npm run typecheck -w web"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.7"
+  }
+}
